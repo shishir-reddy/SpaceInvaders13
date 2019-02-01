@@ -368,7 +368,7 @@ PrefabInstance:
     - target: {fileID: 7600427824000729679, guid: d0d90ea72e6bff74482d1e0621166cef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7600427824000729679, guid: d0d90ea72e6bff74482d1e0621166cef,
         type: 3}
@@ -422,6 +422,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d90ea72e6bff74482d1e0621166cef, type: 3}
+--- !u!1 &6763748219872455438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6763748219872455438, guid: d0d90ea72e6bff74482d1e0621166cef,
+    type: 3}
+  m_PrefabInstance: {fileID: 6352796350557398094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6763748219872455439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763748219872455438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95baa79a45622a84abe4ed81676a4e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 8187953773284486726, guid: 5bf6575a4e838ce4793803f0a2227085, type: 3}
+  bulletSpeed: 5
+  playerSpeed: 5
+  playerRigidBody: {fileID: 6763748219872455440}
+--- !u!50 &6763748219872455440
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763748219872455438}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &7600427824000729679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7600427824000729679, guid: d0d90ea72e6bff74482d1e0621166cef,
