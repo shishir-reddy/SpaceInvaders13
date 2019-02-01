@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShishir : MonoBehaviour
 {
-    public GameObject Bullet;
+    public GameObject PlayerBullet;
 
     [SerializeField]
     private float bulletSpeed = 5f;
@@ -38,8 +38,11 @@ public class PlayerShishir : MonoBehaviour
      */
     private void Shoot()
     {
-        GameObject bullet = Instantiate(Bullet, this.transform.position + Vector3.up, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
+        if(!GameObject.FindGameObjectWithTag("PlayerBullet"))
+        {
+            GameObject bullet = Instantiate(PlayerBullet, this.transform.position + Vector3.up, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
+        }
     }
 
     private void Move()
