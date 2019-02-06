@@ -12,9 +12,13 @@ public class PlayerShishir : MonoBehaviour
     [SerializeField]
     private float playerSpeed = 5f;
 
-
-    [SerializeField]
     private Rigidbody2D playerRigidBody;
+
+    private void Awake()
+    {
+        playerRigidBody = this.GetComponent<Rigidbody2D>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
