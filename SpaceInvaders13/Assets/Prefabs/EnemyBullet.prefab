@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8187953773284486726, guid: 5bf6575a4e838ce4793803f0a2227085,
         type: 3}
       propertyPath: m_Name
-      value: PlayerBullet
+      value: EnemyBullet
       objectReference: {fileID: 0}
     - target: {fileID: 6861581888753247634, guid: 5bf6575a4e838ce4793803f0a2227085,
         type: 3}
