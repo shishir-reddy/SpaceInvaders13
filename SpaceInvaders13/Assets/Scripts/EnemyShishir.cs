@@ -16,7 +16,7 @@ public class EnemyShishir : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyRigidBody.velocity = new Vector2(-1 * speed, enemyRigidBody.velocity.y);
+        //enemyRigidBody.velocity = new Vector2(-1 * speed, enemyRigidBody.velocity.y);
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class EnemyShishir : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Collider2D>().CompareTag("Wall"))
+        if(collision.GetComponent<Collider2D>().CompareTag("Manager"))
         {
             enemyRigidBody.position = new Vector2(enemyRigidBody.position.x, enemyRigidBody.position.y - 1);
             enemyRigidBody.velocity = new Vector2(-1 * enemyRigidBody.velocity.x, enemyRigidBody.velocity.y);
