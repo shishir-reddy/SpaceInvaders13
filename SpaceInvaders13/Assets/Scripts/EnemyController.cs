@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
                 ThingsThatCanShoot.Add(EnemyList[i]);
             }
         }
+        ShootAh();
     }
 
     // Update is called once per frame
@@ -37,13 +38,14 @@ public class EnemyController : MonoBehaviour
                 GameObject controller = EnemyList[i];
                 controller.GetComponent<EnemyScript>().speed = -controller.GetComponent<EnemyScript>().speed;
                 controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y - .5f, 0);
-                ShootAh();
             }
         }
         else if (collision.collider.CompareTag("EnemyBullet"))
         {
+            Debug.Log("Bullet Hit");
             EnemyBulletHit.Invoke();
             ShootAh();
+            Destroy(collision.collider);
         }
     }
     void ShootAh()
@@ -55,8 +57,13 @@ public class EnemyController : MonoBehaviour
                 ThingsThatCanShoot.Add(EnemyList[i]);
             }
         }
-        pickedNumber = Random.Range(0, ThingsThatCanShoot.Count -1);
-        GameObject newBullet = Instantiate(EnemyBulletHolder,ThingsThatCanShoot[pickedNumber].transform.position, Quaternion.identity);
-        newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 20;
+        if (ThingsThatCanShoot.Count > 0)
+        {
+            
+            pickedNumber = Random.Range(0, ThingsThatCanShoot.Count - 1);
+            Vector3 transform = new Vector3(ThingsThatCanShoot[pickedNumber].transform.position.x, ThingsThatCanShoot[pickedNumber].transform.position.y - 1, ThingsThatCanShoot[pickedNumber].transform.position.z);
+            GameObject newBullet = Instantiate(EnemyBulletHolder, transform , Quaternion.identity);
+            newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 2;
+        }
     }
 }

@@ -263,6 +263,11 @@ PrefabInstance:
       propertyPath: speed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 1797161051074071069, guid: 8d09d6ff268ee024997d91a528d54ced,
+        type: 3}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6073936102131507473, guid: 8d09d6ff268ee024997d91a528d54ced,
         type: 3}
       propertyPath: m_BodyType
@@ -286,6 +291,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 298618906}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &298618910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1797161051074071069, guid: 8d09d6ff268ee024997d91a528d54ced,
+    type: 3}
+  m_PrefabInstance: {fileID: 298618906}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298618907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67fcf5f4eb66b045bd91f718ba26cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,9 +522,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0413f73cf4b739043a867dd49660bc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyBulletHolder: {fileID: 3260077679271910079, guid: 10668fa8e6ad7f243aeecd4b59b50232,
+    type: 3}
+  EnemyBulletHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 298618910}
+        m_MethodName: CheckifCanShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   EnemyList:
   - {fileID: 8675342637607284366}
   - {fileID: 298618907}
+  ThingsThatCanShoot: []
 --- !u!4 &1350540141
 Transform:
   m_ObjectHideFlags: 0

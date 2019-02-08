@@ -13,7 +13,6 @@ public class EnemyScript : MonoBehaviour
     void Awake()
     {
         
-        canShoot = false;
         m_rigidbody = GetComponent<Rigidbody2D>();
     }
     void Start()
