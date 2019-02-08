@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Bullet Hit");
             EnemyBulletHit.Invoke();
             ShootAh();
-            Destroy(collision.collider);
+            Destroy(collision.gameObject);
         }
     }
     void ShootAh()
