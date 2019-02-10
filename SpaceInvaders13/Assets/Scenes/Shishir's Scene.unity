@@ -179,31 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1797161051074071069, guid: 8d09d6ff268ee024997d91a528d54ced,
-        type: 3}
-      propertyPath: speed
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1797161051074071069, guid: 8d09d6ff268ee024997d91a528d54ced,
-        type: 3}
-      propertyPath: canShoot
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073936102131507473, guid: 8d09d6ff268ee024997d91a528d54ced,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073936102131507473, guid: 8d09d6ff268ee024997d91a528d54ced,
-        type: 3}
-      propertyPath: m_SleepingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073936102131507473, guid: 8d09d6ff268ee024997d91a528d54ced,
-        type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d09d6ff268ee024997d91a528d54ced, type: 3}
 --- !u!4 &28565271 stripped
@@ -696,7 +671,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -17.863825, y: 0}
@@ -751,7 +726,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8.395056, y: 0.45308745}
+  m_Offset: {x: -8.395056, y: 0.5280226}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -762,7 +737,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.790112, y: 0.0938251}
+  m_Size: {x: 17.790112, y: 0.08701292}
   m_EdgeRadius: 0
 --- !u!61 &1350540139
 BoxCollider2D:
@@ -774,7 +749,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.9429426, y: 0}
@@ -804,28 +779,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyBulletHolder: {fileID: 3260077679271910079, guid: 10668fa8e6ad7f243aeecd4b59b50232,
     type: 3}
-  EnemyBulletHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8675342637607284367}
-        m_MethodName: CheckifCanShoot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   EnemyList:
   - {fileID: 2015456373}
   - {fileID: 1675531075}
   - {fileID: 1143355010}
   - {fileID: 1769597625}
-  ThingsThatCanShoot: []
 --- !u!4 &1350540141
 Transform:
   m_ObjectHideFlags: 0
@@ -1098,15 +1056,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8675342637607284365}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8675342637607284367 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1797161051074071069, guid: 8d09d6ff268ee024997d91a528d54ced,
-    type: 3}
-  m_PrefabInstance: {fileID: 8675342637607284365}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015456373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b67fcf5f4eb66b045bd91f718ba26cfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

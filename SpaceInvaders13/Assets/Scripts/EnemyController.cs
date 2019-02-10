@@ -6,21 +6,15 @@ using UnityEngine.Events;
 public class EnemyController : MonoBehaviour
 {
     public GameObject EnemyBulletHolder;
-    public UnityEvent EnemyBulletHit;
     public List<GameObject> EnemyList;
-    public List<GameObject> ThingsThatCanShoot;
+    private List<GameObject> ThingsThatCanShoot;
+
     private int pickedNumber;
     
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < EnemyList.Count; i++)
-        {
-            if (EnemyList[i].GetComponent<EnemyScript>().canShoot)
-            {
-                ThingsThatCanShoot.Add(EnemyList[i]);
-            }
-        }
+        ThingsThatCanShoot = new List<GameObject>();
         ShootAh();
     }
 
@@ -29,27 +23,50 @@ public class EnemyController : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    /*
+     * Called when an enemy hits the GameManager. Reverses x velocity and moves each enemy down by 1.
+     */
+    private void UpdateMovement()
     {
-        if (collision.collider.CompareTag("Enemy"))
+        for (int i = 0; i < EnemyList.Count; i++)
         {
-            for (int i = 0; i<EnemyList.Count; i++)
-            {
-                GameObject controller = EnemyList[i];
-                controller.GetComponent<EnemyScript>().speed = -controller.GetComponent<EnemyScript>().speed;
-                controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y - .5f, 0);
-            }
+            Rigidbody2D enemyRigidBody = EnemyList[i].GetComponent<Rigidbody2D>();
+
+            enemyRigidBody.position = new Vector2(enemyRigidBody.position.x, enemyRigidBody.position.y - 1);
+            enemyRigidBody.velocity = new Vector2(-1 * enemyRigidBody.velocity.x, enemyRigidBody.velocity.y);
         }
-        else if (collision.collider.CompareTag("EnemyBullet"))
+    }
+
+    /*
+     * Called when an enemy bullet disappears. Updates which enemies can shoot.
+     */
+    private void UpdateShooters()
+    {
+        for (int i = 0; i < EnemyList.Count; i++)
+        {
+            EnemyScript enemy = EnemyList[i].GetComponent<EnemyScript>();
+            enemy.CheckifCanShoot();                      
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Collider2D>().CompareTag("Enemy"))
+        {
+            UpdateMovement();
+        }
+
+        if (collision.GetComponent<Collider2D>().CompareTag("EnemyBullet"))
         {
             Debug.Log("Bullet Hit");
-            EnemyBulletHit.Invoke();
-            ShootAh();
             Destroy(collision.gameObject);
+            ShootAh();
         }
     }
     void ShootAh()
     {
+        UpdateShooters();
         for (int i = 0; i < EnemyList.Count; i++)
         {
             if (EnemyList[i].GetComponent<EnemyScript>().canShoot)
@@ -59,11 +76,12 @@ public class EnemyController : MonoBehaviour
         }
         if (ThingsThatCanShoot.Count > 0)
         {
-            
             pickedNumber = Random.Range(0, ThingsThatCanShoot.Count - 1);
             Vector3 transform = new Vector3(ThingsThatCanShoot[pickedNumber].transform.position.x, ThingsThatCanShoot[pickedNumber].transform.position.y - 1, ThingsThatCanShoot[pickedNumber].transform.position.z);
             GameObject newBullet = Instantiate(EnemyBulletHolder, transform , Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 2;
+            Physics2D.IgnoreCollision(ThingsThatCanShoot[pickedNumber].GetComponent<Collider2D>(), newBullet.GetComponent<Collider2D>());
         }
+        ThingsThatCanShoot.Clear();
     }
 }

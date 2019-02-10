@@ -12,27 +12,31 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+        canShoot = false;
         m_rigidbody = GetComponent<Rigidbody2D>();
     }
     void Start()
     {
-        
+        m_rigidbody.velocity = new Vector2(speed * Time.deltaTime, 0);
     }
     // Update is called once per frame
     void Update()
     {
-        m_rigidbody.velocity = new Vector2(speed * Time.deltaTime, 0);
+
     }
 
     public void CheckifCanShoot()
     {
-        if (canShoot)
+        
+        if (canShoot) {
             return;
-        if (Physics.Raycast(transform.position, -Vector3.down * 5, out ThingInFront))
+        }
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down * 5);
+        if (hitInfo)
         {
+            Debug.Log("Got Here" + canShoot);
             Debug.Log("This hit a Thing");
-            if (ThingInFront.collider.CompareTag("Enemy"))
+            if (hitInfo.collider.CompareTag("Enemy"))
             {
                 canShoot = false;
             }
@@ -41,6 +45,5 @@ public class EnemyScript : MonoBehaviour
                 canShoot = true;
             }
         }
-        else { canShoot = true; }
     }
 }

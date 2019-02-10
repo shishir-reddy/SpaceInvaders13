@@ -98,7 +98,7 @@ MonoBehaviour:
   EnemyBullet: {fileID: 3260077679271910079, guid: 10668fa8e6ad7f243aeecd4b59b50232,
     type: 3}
   speed: 40
-  canShoot: 0
+  canShoot: 1
 --- !u!61 &4235448258483967134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8675342637090409181}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57bbf4a6fc8f2604a87e082bdfd4bfaf, type: 3}
   m_Name: 
