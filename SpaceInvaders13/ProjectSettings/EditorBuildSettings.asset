@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 867a45279aec747e5be43d2df37ef2b4
   - enabled: 1
+    path: Assets/Scenes/Shishir's Scene.unity
+    guid: 900c94ab0556117449cc6210da3235ca
+  - enabled: 1
     path: Assets/Scenes/UITestScene.unity
     guid: 5e47070ecbced448c88f156d33d9b483
   m_configObjects: {}

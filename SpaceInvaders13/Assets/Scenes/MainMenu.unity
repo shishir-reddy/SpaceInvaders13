@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 1956168630}
   - component: {fileID: 1956168633}
   m_Layer: 5
-  m_Name: RetryButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 2041882268}
   - component: {fileID: 2041882267}
   m_Layer: 5
-  m_Name: TMP Retry
+  m_Name: TMP Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -820,7 +820,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Retry
+  m_text: 'Play
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -891,7 +893,7 @@ MonoBehaviour:
     textComponent: {fileID: 0}
     characterCount: 5
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 1
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -1120,6 +1122,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuitButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4774868532645924131, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309418283}
+    - target: {fileID: 4774868532645924131, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774868532645924131, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
+        type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4774868532645924130, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1239,21 +1256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774868532645924131, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1309418283}
-    - target: {fileID: 4774868532645924131, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774868532645924131, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
-        type: 3}
-      propertyPath: m_Transition
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4774868531824902934, guid: 67b972d1a7c3e4fe4b0059d1d8bbd536,
         type: 3}
