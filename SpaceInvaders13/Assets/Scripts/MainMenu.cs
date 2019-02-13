@@ -10,6 +10,13 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("UITestScene");
     }
+    
+    
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,10 +25,5 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    void TestFunction()
 
-    {
-        
-        
-    }
 }

@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 1956168631}
   - component: {fileID: 1956168630}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Retry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 2041882268}
   - component: {fileID: 2041882267}
   m_Layer: 5
-  m_Name: TMP Start
+  m_Name: TMP Retry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

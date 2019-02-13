@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b70e7224-4a68-4ed0-9f4e-cda6f5dfad3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceInvaders13/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,14 +18,36 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="210">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
-                <marker date="1550021098032" expanded="false" signature="6:113" ph="..." />
-                <marker date="1550021098032" expanded="true" signature="152:432" ph="{...}" />
-                <marker date="1550021098032" expanded="true" signature="235:294" ph="{...}" />
-                <marker date="1550021098032" expanded="true" signature="352:373" ph="{...}" />
-                <marker date="1550021098032" expanded="true" signature="400:430" ph="{...}" />
+                <marker date="1550023331479" expanded="false" signature="6:113" ph="..." />
+                <marker date="1550023331479" expanded="true" signature="152:460" ph="{...}" />
+                <marker date="1550023331479" expanded="true" signature="235:294" ph="{...}" />
+                <marker date="1550023331479" expanded="true" signature="336:376" ph="{...}" />
+                <marker date="1550023331479" expanded="true" signature="434:455" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../UI-Demo/UI Demo/Assets/Scripts/Timer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#113#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../UI-Demo/UI Demo/Assets/Scripts/MainMenu.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#113#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,6 +59,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../UI-Demo/UI Demo/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UI-Demo/UI Demo/Assets/Scripts/Timer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -63,12 +86,12 @@
     </navigator>
     <panes>
       <pane id="FileSystemExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
       </pane>
       <pane id="AssemblyExplorer" />
     </panes>
@@ -117,12 +140,14 @@
       <option name="presentableId" value="Default" />
       <updated>1550017096108</updated>
       <workItem from="1550017100618" duration="638000" />
-      <workItem from="1550020441539" duration="535000" />
+      <workItem from="1550020441539" duration="1131000" />
+      <workItem from="1550022903054" duration="10000" />
+      <workItem from="1550022933844" duration="342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1173000" />
+    <option name="totallyTimeSpent" value="2121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -185,16 +210,34 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../UI-Demo/UI Demo/Assets/Scripts/MainMenu.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../UI-Demo/UI Demo/Assets/Scripts/Timer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="210">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
-            <marker date="1550021098032" expanded="false" signature="6:113" ph="..." />
-            <marker date="1550021098032" expanded="true" signature="152:432" ph="{...}" />
-            <marker date="1550021098032" expanded="true" signature="235:294" ph="{...}" />
-            <marker date="1550021098032" expanded="true" signature="352:373" ph="{...}" />
-            <marker date="1550021098032" expanded="true" signature="400:430" ph="{...}" />
+            <marker date="1550023331479" expanded="false" signature="6:113" ph="..." />
+            <marker date="1550023331479" expanded="true" signature="152:460" ph="{...}" />
+            <marker date="1550023331479" expanded="true" signature="235:294" ph="{...}" />
+            <marker date="1550023331479" expanded="true" signature="336:376" ph="{...}" />
+            <marker date="1550023331479" expanded="true" signature="434:455" ph="{...}" />
           </folding>
         </state>
       </provider>
