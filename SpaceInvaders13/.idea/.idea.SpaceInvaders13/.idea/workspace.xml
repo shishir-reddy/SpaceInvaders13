@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b70e7224-4a68-4ed0-9f4e-cda6f5dfad3a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerShishir.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerShishir.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b70e7224-4a68-4ed0-9f4e-cda6f5dfad3a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/VariableHolder.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="13" />
               <folding>
                 <marker date="1550109247979" expanded="false" signature="6:148" ph="..." />
                 <marker date="1550109247979" expanded="true" signature="193:1320" ph="{...}" />
@@ -47,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerShishir.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="840">
@@ -281,12 +279,12 @@
       <workItem from="1550020441539" duration="1131000" />
       <workItem from="1550022903054" duration="10000" />
       <workItem from="1550022933844" duration="734000" />
-      <workItem from="1550099797277" duration="5543000" />
+      <workItem from="1550099797277" duration="5762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8056000" />
+    <option name="totallyTimeSpent" value="8275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,23 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/VariableHolder.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <marker date="1550109247979" expanded="false" signature="6:148" ph="..." />
-            <marker date="1550109247979" expanded="true" signature="193:1320" ph="{...}" />
-            <marker date="1550109247979" expanded="true" signature="510:572" ph="{...}" />
-            <marker date="1550109247979" expanded="true" signature="597:798" ph="{...}" />
-            <marker date="1550109247979" expanded="true" signature="856:877" ph="{...}" />
-            <marker date="1550109247979" expanded="true" signature="921:1091" ph="{...}" />
-            <marker date="1550109247979" expanded="true" signature="1115:1318" ph="{...}" />
-            <marker date="1550109247979" expanded="true" signature="1243:1312" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/BulletShishir.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -480,6 +461,23 @@
             <marker date="1550113178109" expanded="true" signature="2347:2424" ph="{...}" />
             <marker date="1550113178109" expanded="true" signature="2489:2647" ph="{...}" />
             <marker date="1550113178109" expanded="true" signature="2544:2641" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/VariableHolder.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <marker date="1550109247979" expanded="false" signature="6:148" ph="..." />
+            <marker date="1550109247979" expanded="true" signature="193:1320" ph="{...}" />
+            <marker date="1550109247979" expanded="true" signature="510:572" ph="{...}" />
+            <marker date="1550109247979" expanded="true" signature="597:798" ph="{...}" />
+            <marker date="1550109247979" expanded="true" signature="856:877" ph="{...}" />
+            <marker date="1550109247979" expanded="true" signature="921:1091" ph="{...}" />
+            <marker date="1550109247979" expanded="true" signature="1115:1318" ph="{...}" />
+            <marker date="1550109247979" expanded="true" signature="1243:1312" ph="{...}" />
           </folding>
         </state>
       </provider>
