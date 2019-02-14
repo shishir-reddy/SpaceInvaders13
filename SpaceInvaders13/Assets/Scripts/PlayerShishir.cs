@@ -97,6 +97,7 @@ public class PlayerShishir : MonoBehaviour
         {
             OnHitPlayer.Invoke();
             Destroy(collision.gameObject);
+            EnemyController.instance.ShootAh();
         }
     }
 }

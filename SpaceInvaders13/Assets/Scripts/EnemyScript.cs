@@ -13,9 +13,9 @@ public class EnemyScript : MonoBehaviour
     public int speed;
     public bool canShoot;
     RaycastHit ThingInFront;
-    public static EnemyScript instance;
+    
     public int PointValue;
-    public IntegerUnityEvent OnEnemyKilled;
+    public static IntegerUnityEvent OnEnemyKilled = new IntegerUnityEvent();
 
 
 
@@ -24,7 +24,6 @@ public class EnemyScript : MonoBehaviour
     void Awake()
     {
         canShoot = false;
-        instance = this;
         m_rigidbody = GetComponent<Rigidbody2D>();
     }
     void Start()
@@ -58,13 +57,12 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("PlayerBullet"))
+        
+        if (collision.CompareTag("PlayerBullet"))
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            OnEnemyKilled.Invoke(this.gameObject);
         }
     }
 }

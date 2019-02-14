@@ -18,12 +18,12 @@ public class VariableHolder : MonoBehaviour
     {
         PlayerLives = 3;
         instance = this;
+        
     }
     private void Start()
     {
-        Debug.Log(PlayerShishir.instance);
         PlayerShishir.instance.OnHitPlayer.AddListener(() => ChangeLives());
-        EnemyScript.instance.OnEnemyKilled.AddListener(ChangeScore);
+        EnemyScript.OnEnemyKilled.AddListener(ChangeScore);
     }
 
     // Update is called once per frame
@@ -35,7 +35,8 @@ public class VariableHolder : MonoBehaviour
     void ChangeScore(GameObject ThisEnemy)
     {
         PlayerScore = PlayerScore + ThisEnemy.GetComponent<EnemyScript>().PointValue;
-        LivesText.text = string.Format("Score: {0:0000}", PlayerScore);
+        Debug.Log(PlayerScore);
+        ScoreText.text = string.Format("Score: {0:0000}", PlayerScore);
     }
 
     void ChangeLives()

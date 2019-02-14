@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
     public GameObject EnemyBulletHolder;
     public List<GameObject> EnemyList;
     private List<GameObject> ThingsThatCanShoot;
+    [System.NonSerialized]public static EnemyController instance;
+
 
 
     private int pickedNumber;
@@ -15,6 +17,7 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
     }
 
 
@@ -28,7 +31,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        RemoveNull();
     }
 
     /*
@@ -36,11 +39,12 @@ public class EnemyController : MonoBehaviour
      */
     private void UpdateMovement()
     {
+        Debug.Log("Hit Side");
         for (int i = 0; i < EnemyList.Count; i++)
         {
             Rigidbody2D enemyRigidBody = EnemyList[i].GetComponent<Rigidbody2D>();
 
-            enemyRigidBody.position = new Vector2(enemyRigidBody.position.x, enemyRigidBody.position.y - 1);
+            enemyRigidBody.position = new Vector2(enemyRigidBody.position.x + -0.2f*enemyRigidBody.velocity.x, enemyRigidBody.position.y - 1);
             enemyRigidBody.velocity = new Vector2(-1 * enemyRigidBody.velocity.x, enemyRigidBody.velocity.y);
         }
     }
@@ -71,20 +75,22 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.GetComponent<Collider2D>().CompareTag("Enemy"))
         {
-            RemoveNull();
             UpdateMovement();
         }
 
-        if (collision.GetComponent<Collider2D>().CompareTag("EnemyBullet"))
+        if (collision.CompareTag("EnemyBullet"))
         {
-            Debug.Log("Bullet Hit");
             Destroy(collision.gameObject);
             ShootAh();
         }
+
+        if (collision.CompareTag("PlayerBullet"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
-    void ShootAh()
+    public void ShootAh()
     {
-        RemoveNull();
         UpdateShooters();
         for (int i = 0; i < EnemyList.Count; i++)
         {

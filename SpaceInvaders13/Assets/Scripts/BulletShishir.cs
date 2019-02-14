@@ -18,17 +18,10 @@ public class BulletShishir : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Collider2D>().CompareTag("Enemy"))
+        if(collision.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-        }
-
-        else if(collision.GetComponent<Collider2D>().CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
-
-        
+        }        
     }
 }
