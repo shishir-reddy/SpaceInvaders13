@@ -1258,6 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LivesText: {fileID: 360533134}
+  ScoreText: {fileID: 233750299}
 --- !u!1 &1620764110
 GameObject:
   m_ObjectHideFlags: 0

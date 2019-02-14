@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class IntegerUnityEvent : UnityEvent<int> { }
+public class IntegerUnityEvent : UnityEvent<GameObject> { }
 
 public class EnemyScript : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
     RaycastHit ThingInFront;
     public static EnemyScript instance;
     public int PointValue;
-    public IntegerUnityEvent OnEnemyKilled;
+    public static IntegerUnityEvent OnEnemyKilled;
 
 
 
