@@ -10,7 +10,14 @@ public class EnemyController : MonoBehaviour
     private List<GameObject> ThingsThatCanShoot;
 
     private int pickedNumber;
-    
+
+
+    private void Awake()
+    {
+        EnemyScript.OnEnemyKilled.AddListener(KillEnemyInList);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +29,12 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    void KillEnemyInList(GameObject theEnemy)
+    {
+        EnemyList.Remove(theEnemy);
     }
 
     /*

@@ -23,7 +23,7 @@ public class VariableHolder : MonoBehaviour
     {
         Debug.Log(PlayerShishir.instance);
         PlayerShishir.instance.OnHitPlayer.AddListener(() => ChangeLives());
-        PlayerShishir.instance.
+        EnemyScript.OnEnemyKilled.AddListener(ChangeScore);
     }
 
     // Update is called once per frame
@@ -32,9 +32,9 @@ public class VariableHolder : MonoBehaviour
         
     }
 
-    void ChangeScore(int PointValue)
+    void ChangeScore(GameObject ThisEnemy)
     {
-        PlayerScore = PlayerScore + PointValue;
+        PlayerScore = PlayerScore + ThisEnemy.GetComponent<EnemyScript>().PointValue;
         LivesText.text = string.Format("Score: {0:0000}", PlayerScore);
     }
 
