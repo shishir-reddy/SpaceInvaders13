@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
         {
             Rigidbody2D enemyRigidBody = EnemyList[i].GetComponent<Rigidbody2D>();
 
-            enemyRigidBody.position = new Vector2(enemyRigidBody.position.x + -0.2f*enemyRigidBody.velocity.x, enemyRigidBody.position.y - 1);
+            enemyRigidBody.position = new Vector2(enemyRigidBody.position.x + -3f*enemyRigidBody.velocity.x, enemyRigidBody.position.y - 1);
             enemyRigidBody.velocity = new Vector2(-1 * enemyRigidBody.velocity.x, enemyRigidBody.velocity.y);
         }
     }
