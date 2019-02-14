@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public List<GameObject> EnemyList;
     private List<GameObject> ThingsThatCanShoot;
     [System.NonSerialized]public static EnemyController instance;
-
+    private bool spaghetti = true;
 
 
     private int pickedNumber;
@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         RemoveNull();
+        spaghetti = true;
     }
 
     /*
@@ -39,12 +40,12 @@ public class EnemyController : MonoBehaviour
      */
     private void UpdateMovement()
     {
-        Debug.Log("Hit Side");
+        spaghetti = false;
         for (int i = 0; i < EnemyList.Count; i++)
         {
             Rigidbody2D enemyRigidBody = EnemyList[i].GetComponent<Rigidbody2D>();
 
-            enemyRigidBody.position = new Vector2(enemyRigidBody.position.x + -3f*enemyRigidBody.velocity.x, enemyRigidBody.position.y - 1);
+            enemyRigidBody.position = new Vector2(enemyRigidBody.position.x, enemyRigidBody.position.y - 1);
             enemyRigidBody.velocity = new Vector2(-1 * enemyRigidBody.velocity.x, enemyRigidBody.velocity.y);
         }
     }
@@ -75,7 +76,10 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.GetComponent<Collider2D>().CompareTag("Enemy"))
         {
-            UpdateMovement();
+            if(spaghetti)
+            {
+                UpdateMovement();
+            }
         }
 
         if (collision.CompareTag("EnemyBullet"))
@@ -104,7 +108,7 @@ public class EnemyController : MonoBehaviour
             pickedNumber = Random.Range(0, ThingsThatCanShoot.Count - 1);
             Vector3 transform = new Vector3(ThingsThatCanShoot[pickedNumber].transform.position.x, ThingsThatCanShoot[pickedNumber].transform.position.y - 1, ThingsThatCanShoot[pickedNumber].transform.position.z);
             GameObject newBullet = Instantiate(EnemyBulletHolder, transform, Quaternion.identity);
-            newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 2;
+            newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 5;
             Physics2D.IgnoreCollision(ThingsThatCanShoot[pickedNumber].GetComponent<Collider2D>(), newBullet.GetComponent<Collider2D>());
         }
         ThingsThatCanShoot.Clear();

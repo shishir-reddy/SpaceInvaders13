@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyBullet: {fileID: 3260077679271910079, guid: 10668fa8e6ad7f243aeecd4b59b50232,
     type: 3}
-  speed: 80
+  speed: 2
   canShoot: 1
   PointValue: 10
 --- !u!61 &4235448258483967134

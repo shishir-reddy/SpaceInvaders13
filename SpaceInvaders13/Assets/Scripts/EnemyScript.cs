@@ -28,7 +28,7 @@ public class EnemyScript : MonoBehaviour
     }
     void Start()
     {
-        m_rigidbody.velocity = new Vector2(speed * Time.deltaTime, 0);
+        m_rigidbody.velocity = new Vector2(speed, 0);
     }
     // Update is called once per frame
     void Update()
