@@ -37,7 +37,7 @@ public class PlayerShishir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shoot();
         }
@@ -63,7 +63,7 @@ public class PlayerShishir : MonoBehaviour
         //float movement = Input.GetAxisRaw("Horizontal");
         //playerRigidBody.velocity = new Vector2(movement * playerSpeed, playerRigidBody.velocity.y);
         
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             if (c.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x > transform.position.x + transform.localScale.x/2 ) 
             {
@@ -74,7 +74,7 @@ public class PlayerShishir : MonoBehaviour
                 playerRigidBody.velocity = new Vector2(0 , playerRigidBody.velocity.y);
             }
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
         {
             if (c.ScreenToWorldPoint(new Vector2(0, 0)).x < transform.position.x - transform.localScale.x/2 ) 
             {
@@ -97,6 +97,7 @@ public class PlayerShishir : MonoBehaviour
         {
             OnHitPlayer.Invoke();
             Destroy(collision.gameObject);
+            EnemyController.canShoot = true;
             EnemyController.instance.ShootAh();
         }
     }

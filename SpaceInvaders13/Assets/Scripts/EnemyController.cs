@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     private List<GameObject> ThingsThatCanShoot;
     [System.NonSerialized]public static EnemyController instance;
     private bool spaghetti = true;
+    public static bool canShoot;
 
 
     private int pickedNumber;
@@ -19,7 +20,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        
+        canShoot = true;
     }
 
 
@@ -35,6 +36,10 @@ public class EnemyController : MonoBehaviour
     {
         RemoveNull();
         GameOver();
+        if (canShoot)
+        {
+            ShootAh();
+        }
         spaghetti = true;
     }
 
@@ -88,6 +93,7 @@ public class EnemyController : MonoBehaviour
         if (collision.CompareTag("EnemyBullet"))
         {
             Destroy(collision.gameObject);
+            canShoot = true;
             ShootAh();
         }
 
@@ -119,9 +125,13 @@ public class EnemyController : MonoBehaviour
         {
             pickedNumber = Random.Range(0, ThingsThatCanShoot.Count - 1);
             Vector3 transform = new Vector3(ThingsThatCanShoot[pickedNumber].transform.position.x, ThingsThatCanShoot[pickedNumber].transform.position.y - 1, ThingsThatCanShoot[pickedNumber].transform.position.z);
-            GameObject newBullet = Instantiate(EnemyBulletHolder, transform, Quaternion.identity);
-            newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 5;
-            Physics2D.IgnoreCollision(ThingsThatCanShoot[pickedNumber].GetComponent<Collider2D>(), newBullet.GetComponent<Collider2D>());
+            if (Random.Range(0, 100) <= 4)
+            {
+                canShoot = false;
+                GameObject newBullet = Instantiate(EnemyBulletHolder, transform, Quaternion.identity);
+                newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 5;
+                Physics2D.IgnoreCollision(ThingsThatCanShoot[pickedNumber].GetComponent<Collider2D>(), newBullet.GetComponent<Collider2D>());
+            }
         }
         ThingsThatCanShoot.Clear();
     }
