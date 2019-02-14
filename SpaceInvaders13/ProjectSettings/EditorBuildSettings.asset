@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 867a45279aec747e5be43d2df37ef2b4
   - enabled: 1
-    path: Assets/Scenes/Shishir's Scene.unity
-    guid: 900c94ab0556117449cc6210da3235ca
+    path: Assets/Scenes/EnemyTestScene The Fake One This Time.unity
+    guid: b857e16017e39d84f8dd3c92572548a1
   - enabled: 1
     path: Assets/Scenes/RetryMenu.unity
     guid: 537cfc4147d754076b724258a3b92d2a
