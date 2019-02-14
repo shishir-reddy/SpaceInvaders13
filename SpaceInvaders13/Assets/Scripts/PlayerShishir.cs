@@ -18,6 +18,7 @@ public class PlayerShishir : MonoBehaviour
     private Rigidbody2D playerRigidBody;
 
     public UnityEvent OnHitPlayer;
+    private Camera c;
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class PlayerShishir : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        c = Camera.main;
 
     }
 
@@ -57,8 +60,35 @@ public class PlayerShishir : MonoBehaviour
 
     private void Move()
     {
-        float movement = Input.GetAxisRaw("Horizontal");
-        playerRigidBody.velocity = new Vector2(movement * playerSpeed, playerRigidBody.velocity.y);
+        //float movement = Input.GetAxisRaw("Horizontal");
+        //playerRigidBody.velocity = new Vector2(movement * playerSpeed, playerRigidBody.velocity.y);
+        
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (c.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x > transform.position.x + transform.localScale.x/2 ) 
+            {
+                playerRigidBody.velocity = new Vector2(playerSpeed , playerRigidBody.velocity.y);
+            }
+            else
+            {
+                playerRigidBody.velocity = new Vector2(0 , playerRigidBody.velocity.y);
+            }
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            if (c.ScreenToWorldPoint(new Vector2(0, 0)).x < transform.position.x - transform.localScale.x/2 ) 
+            {
+                playerRigidBody.velocity = new Vector2(-playerSpeed , playerRigidBody.velocity.y);
+            }
+            else
+            {
+                playerRigidBody.velocity = new Vector2(0,0);
+            }
+        }
+        else
+        {
+            playerRigidBody.velocity = new Vector2(0,0);
+        }  
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
