@@ -24,6 +24,7 @@ public class VariableHolder : MonoBehaviour
     {
         PlayerShishir.instance.OnHitPlayer.AddListener(() => ChangeLives());
         EnemyScript.OnEnemyKilled.AddListener(ChangeScore);
+        
     }
 
     // Update is called once per frame
@@ -31,6 +32,8 @@ public class VariableHolder : MonoBehaviour
     {
         
     }
+
+
 
     void ChangeScore(GameObject ThisEnemy)
     {

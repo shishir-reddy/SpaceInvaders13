@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        
     }
 
 
@@ -32,6 +34,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         RemoveNull();
+        GameOver();
         spaghetti = true;
     }
 
@@ -93,6 +96,15 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    void GameOver()
+    {
+        if (EnemyList.Count == 0)
+        {
+            SceneManager.LoadScene("RetryMenu");
+        }
+    }
+
     public void ShootAh()
     {
         UpdateShooters();
