@@ -47,8 +47,6 @@ public class EnemyScript : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down * 5);
         if (hitInfo)
         {
-            Debug.Log("Got Here" + canShoot);
-            Debug.Log("This hit a Thing");
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 canShoot = false;
@@ -65,8 +63,8 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.collider.CompareTag("PlayerBullet"))
         {
-            OnEnemyKilled.Invoke(this.gameObject);
             Destroy(collision.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

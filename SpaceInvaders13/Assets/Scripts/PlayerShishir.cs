@@ -63,7 +63,6 @@ public class PlayerShishir : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggered");
         if (collision.CompareTag("EnemyBullet"))
         {
             OnHitPlayer.Invoke();

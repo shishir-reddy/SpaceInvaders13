@@ -15,7 +15,6 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        EnemyScript.instance.OnEnemyKilled.AddListener(KillEnemyInList);
     }
 
 
@@ -46,14 +45,16 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
-    void KillEnemyInList(GameObject theEnemy)
+    private void RemoveNull()
     {
-        EnemyList.Remove(theEnemy);
-        Destroy(theEnemy);
+        for (int i = 0; i < EnemyList.Count; i++)
+        {
+            if(EnemyList[i] == null)
+            {
+                EnemyList.RemoveAt(i);
+            }
+        }
     }
-
-
     /*
      * Called when an enemy bullet disappears. Updates which enemies can shoot.
      */
@@ -70,6 +71,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.GetComponent<Collider2D>().CompareTag("Enemy"))
         {
+            RemoveNull();
             UpdateMovement();
         }
 
@@ -82,6 +84,7 @@ public class EnemyController : MonoBehaviour
     }
     void ShootAh()
     {
+        RemoveNull();
         UpdateShooters();
         for (int i = 0; i < EnemyList.Count; i++)
         {
