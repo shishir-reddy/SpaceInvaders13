@@ -96,6 +96,7 @@ public class PlayerShishir : MonoBehaviour
         if (collision.CompareTag("EnemyBullet"))
         {
             OnHitPlayer.Invoke();
+            Destroy(collision.gameObject);
         }
     }
 }
