@@ -9,7 +9,9 @@ public class VariableHolder : MonoBehaviour
 {
     [System.NonSerialized] public int PlayerLives;
     [System.NonSerialized] public static VariableHolder instance;
+    [System.NonSerialized] public int PlayerScore;
     public TextMeshProUGUI LivesText;
+    public TextMeshProUGUI ScoreText;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +23,7 @@ public class VariableHolder : MonoBehaviour
     {
         Debug.Log(PlayerShishir.instance);
         PlayerShishir.instance.OnHitPlayer.AddListener(() => ChangeLives());
+        PlayerShishir.instance.
     }
 
     // Update is called once per frame
@@ -29,10 +32,16 @@ public class VariableHolder : MonoBehaviour
         
     }
 
+    void ChangeScore(int PointValue)
+    {
+        PlayerScore = PlayerScore + PointValue;
+        LivesText.text = string.Format("Score: {0:0000}", PlayerScore);
+    }
+
     void ChangeLives()
     {
         PlayerLives--;
-        LivesText.text = string.Format("Score: {0:0}", PlayerLives);
+        LivesText.text = string.Format("Lives: {0:0}", PlayerLives);
         if (PlayerLives <= 0)
         {
             SceneManager.LoadScene("RetryMenu");

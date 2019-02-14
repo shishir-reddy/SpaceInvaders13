@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+
+public class IntegerUnityEvent : UnityEvent<int> { }
 
 public class EnemyScript : MonoBehaviour
 {
@@ -9,10 +13,18 @@ public class EnemyScript : MonoBehaviour
     public int speed;
     public bool canShoot;
     RaycastHit ThingInFront;
+    public static EnemyScript instance;
+    public int PointValue;
+    public IntegerUnityEvent OnEnemyKilled;
+
+    
+
+
     // Start is called before the first frame update
     void Awake()
     {
         canShoot = false;
+        instance = this;
         m_rigidbody = GetComponent<Rigidbody2D>();
     }
     void Start()
