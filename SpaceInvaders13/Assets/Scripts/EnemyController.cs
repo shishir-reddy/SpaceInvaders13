@@ -9,7 +9,15 @@ public class EnemyController : MonoBehaviour
     public List<GameObject> EnemyList;
     private List<GameObject> ThingsThatCanShoot;
 
+
     private int pickedNumber;
+
+
+    private void Awake()
+    {
+        EnemyScript.instance.OnEnemyKilled.AddListener(KillEnemyInList);
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +45,14 @@ public class EnemyController : MonoBehaviour
             enemyRigidBody.velocity = new Vector2(-1 * enemyRigidBody.velocity.x, enemyRigidBody.velocity.y);
         }
     }
+
+
+    void KillEnemyInList(GameObject theEnemy)
+    {
+        EnemyList.Remove(theEnemy);
+        Destroy(theEnemy);
+    }
+
 
     /*
      * Called when an enemy bullet disappears. Updates which enemies can shoot.
@@ -84,4 +100,9 @@ public class EnemyController : MonoBehaviour
         }
         ThingsThatCanShoot.Clear();
     }
+
+
+
+
+
 }

@@ -23,7 +23,7 @@ public class VariableHolder : MonoBehaviour
     {
         Debug.Log(PlayerShishir.instance);
         PlayerShishir.instance.OnHitPlayer.AddListener(() => ChangeLives());
-        EnemyScript.OnEnemyKilled.AddListener(ChangeScore);
+        EnemyScript.instance.OnEnemyKilled.AddListener(ChangeScore);
     }
 
     // Update is called once per frame

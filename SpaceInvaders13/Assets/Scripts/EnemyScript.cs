@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
     RaycastHit ThingInFront;
     public static EnemyScript instance;
     public int PointValue;
-    public static IntegerUnityEvent OnEnemyKilled;
+    public IntegerUnityEvent OnEnemyKilled;
 
 
 
@@ -57,6 +57,16 @@ public class EnemyScript : MonoBehaviour
             {
                 canShoot = true;
             }
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("PlayerBullet"))
+        {
+            OnEnemyKilled.Invoke(this.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
