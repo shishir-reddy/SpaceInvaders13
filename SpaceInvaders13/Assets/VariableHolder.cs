@@ -35,7 +35,7 @@ public class VariableHolder : MonoBehaviour
         LivesText.text = string.Format("Score: {0:0}", PlayerLives);
         if (PlayerLives <= 0)
         {
-            SceneManager.LoadScene(RetryMenu);
+            SceneManager.LoadScene("RetryMenu");
         }
     }
 }
