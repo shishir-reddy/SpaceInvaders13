@@ -11,13 +11,6 @@ public class EnemyController : MonoBehaviour
 
     private int pickedNumber;
 
-
-    private void Awake()
-    {
-        EnemyScript.OnEnemyKilled.AddListener(KillEnemyInList);
-    }
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +21,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-
-    void KillEnemyInList(GameObject theEnemy)
-    {
-        EnemyList.Remove(theEnemy);
     }
 
     /*
@@ -59,7 +46,7 @@ public class EnemyController : MonoBehaviour
         for (int i = 0; i < EnemyList.Count; i++)
         {
             EnemyScript enemy = EnemyList[i].GetComponent<EnemyScript>();
-            enemy.CheckifCanShoot();                      
+            enemy.CheckifCanShoot();
         }
     }
 
@@ -91,7 +78,7 @@ public class EnemyController : MonoBehaviour
         {
             pickedNumber = Random.Range(0, ThingsThatCanShoot.Count - 1);
             Vector3 transform = new Vector3(ThingsThatCanShoot[pickedNumber].transform.position.x, ThingsThatCanShoot[pickedNumber].transform.position.y - 1, ThingsThatCanShoot[pickedNumber].transform.position.z);
-            GameObject newBullet = Instantiate(EnemyBulletHolder, transform , Quaternion.identity);
+            GameObject newBullet = Instantiate(EnemyBulletHolder, transform, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 2;
             Physics2D.IgnoreCollision(ThingsThatCanShoot[pickedNumber].GetComponent<Collider2D>(), newBullet.GetComponent<Collider2D>());
         }
