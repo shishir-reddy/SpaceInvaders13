@@ -1256,6 +1256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LivesText: {fileID: 360533134}
 <<<<<<< HEAD
+<<<<<<< HEAD
   ScoreText: {fileID: 233750299}
 =======
 --- !u!1 &1620764110
@@ -1329,6 +1330,8 @@ BoxCollider2D:
   m_Size: {x: 17.847012, y: 1}
   m_EdgeRadius: 0
 >>>>>>> b163d2e2f95c10fe18e9d2b85e8e649eeca6dee6
+=======
+>>>>>>> parent of b3a273e... Editing Score Stuff
 --- !u!1 &1666135534
 GameObject:
   m_ObjectHideFlags: 0

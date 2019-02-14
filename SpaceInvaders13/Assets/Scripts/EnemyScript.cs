@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class IntegerUnityEvent : UnityEvent<GameObject> { }
+public class IntegerUnityEvent : UnityEvent<int> { }
 
 public class EnemyScript : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
     RaycastHit ThingInFront;
     public static EnemyScript instance;
     public int PointValue;
-    public static IntegerUnityEvent OnEnemyKilled;
+    public IntegerUnityEvent OnEnemyKilled;
 
     
 
@@ -56,16 +56,6 @@ public class EnemyScript : MonoBehaviour
             {
                 canShoot = true;
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("PlayerBullet"))
-        {
-            OnEnemyKilled.Invoke(this.gameObject);
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
     }
 }

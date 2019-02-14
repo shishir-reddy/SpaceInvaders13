@@ -99,7 +99,6 @@ MonoBehaviour:
     type: 3}
   speed: 40
   canShoot: 1
-  PointValue: 10
 --- !u!61 &4235448258483967134
 BoxCollider2D:
   m_ObjectHideFlags: 0
