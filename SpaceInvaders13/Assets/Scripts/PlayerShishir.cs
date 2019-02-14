@@ -10,7 +10,7 @@ public class PlayerShishir : MonoBehaviour
     public static PlayerShishir instance;
 
     [SerializeField]
-    private float bulletSpeed = 5f;
+    private float bulletSpeed = 10f;
 
     [SerializeField]
     private float playerSpeed = 5f;
@@ -37,7 +37,7 @@ public class PlayerShishir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
             Shoot();
         }
@@ -54,7 +54,7 @@ public class PlayerShishir : MonoBehaviour
         if (!GameObject.FindGameObjectWithTag("PlayerBullet"))
         {
             GameObject bullet = Instantiate(PlayerBullet, this.transform.position + Vector3.up, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed*5;
         }
     }
 
@@ -74,7 +74,7 @@ public class PlayerShishir : MonoBehaviour
                 playerRigidBody.velocity = new Vector2(0 , playerRigidBody.velocity.y);
             }
         }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             if (c.ScreenToWorldPoint(new Vector2(0, 0)).x < transform.position.x - transform.localScale.x/2 ) 
             {
