@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
      */
     private void UpdateMovement()
     {
+        RemoveNull();
         spaghetti = false;
         for (int i = 0; i < EnemyList.Count; i++)
         {
